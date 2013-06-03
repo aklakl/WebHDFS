@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magic Cloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.cosmo.css" rel="stylesheet" media="screen">
+    <link href="css/codemirror.css" rel="stylesheet" media="screen">
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="browser">
+            <div class="container-fluid">
+
+                <div class="row-fluid">
+                    <!--<div class="span3">
+
+                        &lt;!&ndash;Sidebar content&ndash;&gt;
+            </div>-->
+                    <div class="span2">
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <button class="btn btn-danger">Create</button>
+                                <button id="uploadBtn" class="btn btn-danger"><i
+                                        class="icon-circle-arrow-up icon-white"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <ul class="nav nav-list">
+                            <li class="nav-header">FAVOURITES</li>
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">DATA</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="span10">
+                        <div class="btn-toolbar">
+
+                            <div class="btn-group">
+                                <button id="deleteBtn" class="btn"><i class="icon-trash"></i> Delete</button>
+                                <button id="cutBtn" class="btn"><i class="icon-magnet"></i> Cut</button>
+                                <button id="copyBtn" class="btn"><i class="icon-file"></i> Copy</button>
+                                <button id="pasteBtn" class="btn"><i class="icon-th-list"></i> Paste</button>
+                            </div>
+
+                            <a id="rename" href="#getValueModal" role="button" class="btn" data-toggle="modal"
+                               title="rename"><i
+                                    class="icon-edit"></i> Reanme</a>
+
+                            <a id="addFolder" href="#getValueModal" role="button" class="btn"
+                               data-toggle="modal" title="Add Folder"><i
+                                    class="icon-folder-close"></i> New Foler</a>
+
+                            <!--<div class="btn-group">-->
+                                <!--<button id="addFav" class="btn"><i class="icon-plus-sign"></i> Add To Fav</button>-->
+                                <!--<button id="delFav" class="btn"><i class="icon-minus-sign"></i> Remove Fav</button>-->
+                            <!--</div>-->
+                        </div>
+                        <form id="fileForm">
+                            <input hidden type="file" id="file"/>
+                        </form>
+
+                        <ul id="nav" class="breadcrumb">
+                            <li index="0"><a href="#">root</a><span class="divider">/</span></li>
+                        </ul>
+                        <hr>
+
+                        <table class="table table-hover table-condensed" id="listTable">
+                            <thead>
+                            <tr>
+                                <th>NAME</th>
+                                <th>DATE MODIFIED</th>
+                                <th>SIZE</th>
+                                <th>KIND</th>
+                            </tr>
+                            </thead>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="codeEditor">
+
+            <textarea id="textArea">
+
+                </textarea>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <a class="brand" href="#">MagicCloud</a>
+
+            <div class="nav-collapse collapse">
+                <ul id="navbar" class="nav">
+                    <li class="active"><a href="#browser" data-toggle="tab">HDFSBrowser</a></li>
+                    <li><a id='codeedit'href="#codeEditor" data-toggle="tab">CodeEditor</a></li>
+                    <li><a href="#jobsTracker" data-toggle="tab">JobsTracker</a></li>
+                </ul>
+
+            </div>
+            <form class="navbar-form pull-right">
+
+                <a href="#" class="btn  btn-warning">Cluster Setting</a>
+
+
+            </form>
+
+
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="getValueModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+        <h3 id="myModalLabel">Enter new name</h3>
+    </div>
+    <div class="modal-body">
+        <input id="modalText" type="text" placeholder="Type new name...">
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button id="getValueBtn" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+    </div>
+</div>
+
+
+<script src="js/jquery.js"></script>
+<!--<script src="js/jquery-smothscroll.js"></script>-->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/codemirror.js"></script>
+<script src="js/javascript.js"></script>
+
+<script src="js/magiccloud.js"></script>
+
+</body>
+</html>

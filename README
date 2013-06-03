@@ -1,0 +1,6 @@
+1. Download & install Nodejs,
+2. Install nodejs 'connect' plugin 
+3. in hosts file, set your namenode ip address
+4. start server use: $node sever.js
+5. access localhost:8000
+
